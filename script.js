@@ -3,9 +3,15 @@ window.onload = function() {
     console.log("Hello");
 };
 */
-let correct_answers = ["2", "3"];
+let correct_answers = ["2", "3", "2"];
 let percent = null;
+let isclicked = false;
 function submit() {
+    if (isclicked == true) {
+        console.log("Slow down u cannot click this fast");
+        return;
+    }
+    isclicked = true;
     //this is run when the user submits the quiz
     console.log("submit");
     var checkedValue = null;
@@ -82,6 +88,13 @@ function submit() {
 
     //add the score to the db
     write_db();
+
+    //pause thr next click
+    // Assuming the animation duration is 2 seconds
+
+    setTimeout(function() {
+        isclicked = false;
+    }, 1100);
 }
 
 window.onload = function() {
@@ -127,7 +140,7 @@ function calculate_avg(datasnapshot) {
 
     //displaying the avg to the user
     document.getElementById("avg").innerHTML =
-        "The global abg was: " + precise_round(avg, 3);
+        "The global avg was: " + precise_round(avg, 3);
 }
 function precise_round(num, dec) {
     if (typeof num !== "number" || typeof dec !== "number") return false;
