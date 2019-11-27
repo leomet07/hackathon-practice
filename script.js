@@ -8,6 +8,7 @@ let percent = null;
 let isclicked = false;
 let warning_div = document.querySelector("#warning");
 let speedwarning_div = document.querySelector("#speedwarning");
+let last_score = null;
 function submit() {
     if (isclicked == true) {
         console.log("Slow down u cannot click this fast");
@@ -88,6 +89,7 @@ function submit() {
     console.log("Your results were " + totalcorrect + "/" + totalqs);
 
     percent = (Number(totalcorrect) / Number(totalqs)) * 100;
+
     console.log(percent + " % ");
 
     let time = new Date();
@@ -108,7 +110,13 @@ function submit() {
         " correct";
 
     //add the score to the db
-    write_db();
+    console.log(percent, last_score);
+    if (percent != last_score) {
+        write_db();
+        last_score = percent;
+    } else {
+        console.log("no need to repeat");
+    }
 
     //pause thr next click
     // Assuming the animation duration is 2 seconds
