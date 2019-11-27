@@ -7,9 +7,11 @@ let correct_answers = ["2", "3", "2"];
 let percent = null;
 let isclicked = false;
 let warning_div = document.querySelector("#warning");
+let speedwarning_div = document.querySelector("#speedwarning");
 function submit() {
     if (isclicked == true) {
         console.log("Slow down u cannot click this fast");
+        speedwarning_div.style.display = "block";
         return;
     }
     isclicked = true;

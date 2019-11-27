@@ -90,6 +90,7 @@ a.article-title:hover {
 
 
 
-#warning {
+#warning,
+#speedwarning {
     display: none;
 }
