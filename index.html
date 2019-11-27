@@ -8,6 +8,7 @@
 
     <title>Why trees shouldnt be cut down</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="icon" type="image/png" href="imgs/favicon.png">
 </head>
 
 <body>
@@ -34,45 +35,54 @@
         </nav>
     </header>
     <main role="main" class="container">
+
+
         <h1 class="text-center">Trees shouldn't be cut down</h1>
 
         <h2>Take a quiz on your knowledge of tree cutting below</h2>
+        <div id="warning">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert"> <strong>Holy guacamole!</strong>
+                You
+                should check in on some of those fields below. <button type="button" class="close" data-dismiss="alert"
+                    aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>
 
-        <div id="quiz">
+        </div>
+
+        <div id="quiz" class="radio radio-info">
             <h3>Question 1: How many trees are cut down a year?</h3>
-            <input class="checkbox" type="radio" name="q1" value="1" />
+            <input class="question_button" type="radio" name="q1" value="1" />
             200 million<br />
-            <input class="checkbox" type="radio" name="q1" value="2" />
+            <input class="question_button" type="radio" name="q1" value="2" />
             7 billion<br />
-            <input class="checkbox" type="radio" name="q1" value="3" />
+            <input class="question_button" type="radio" name="q1" value="3" />
             5 million<br />
-            <input class="checkbox" type="radio" name="q1" value="4" />
+            <input class="question_button" type="radio" name="q1" value="4" />
             20 million<br />
             <h3>
                 Question 2: What is the main reason for trees to be cut
                 down?
             </h3>
-            <input class="checkbox" type="radio" name="q2" value="1" />
+            <input class="question_button" type="radio" name="q2" value="1" />
             Fun<br />
-            <input class="checkbox" type="radio" name="q2" value="2" />
+            <input class="question_button" type="radio" name="q2" value="2" />
             Paper<br />
-            <input class="checkbox" type="radio" name="q2" value="3" />
+            <input class="question_button" type="radio" name="q2" value="3" />
             Land<br />
-            <input class="checkbox" type="radio" name="q2" value="4" />
+            <input class="question_button" type="radio" name="q2" value="4" />
             Wood<br />
             <h3>
                 Question 3: What is the best tree
             </h3>
-            <input class="checkbox" type="radio" name="q3" value="1" />
+            <input class="question_button" type="radio" name="q3" value="1" />
             Pine<br />
-            <input class="checkbox" type="radio" name="q3" value="2" />
+            <input class="question_button" type="radio" name="q3" value="2" />
             Oak<br />
-            <input class="checkbox" type="radio" name="q3" value="3" />
+            <input class="question_button" type="radio" name="q3" value="3" />
             Birch<br />
-            <input class="checkbox" type="radio" name="q3" value="4" />
+            <input class="question_button" type="radio" name="q3" value="4" />
             saavanna<br />
         </div>
-        <button class="submit" id="submit" onclick="submit()">
+        <button id="submit" type="button" class="btn btn-warning" onclick="submit()">
             Submit
         </button>
 
@@ -123,6 +133,16 @@
         firebase.analytics();
     </script>
     <script src="script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

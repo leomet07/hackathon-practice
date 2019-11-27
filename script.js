@@ -6,6 +6,7 @@ window.onload = function() {
 let correct_answers = ["2", "3", "2"];
 let percent = null;
 let isclicked = false;
+let warning_div = document.querySelector("#warning");
 function submit() {
     if (isclicked == true) {
         console.log("Slow down u cannot click this fast");
@@ -15,7 +16,7 @@ function submit() {
     //this is run when the user submits the quiz
     console.log("submit");
     var checkedValue = null;
-    var inputElements = document.getElementsByClassName("checkbox");
+    var inputElements = document.getElementsByClassName("question_button");
     let splitby4 = [];
     let mover = [];
     let totalcorrect = 0;
@@ -61,7 +62,11 @@ function submit() {
             //if no answer was picked for this question, count it as wrong
         }
         if (answerchosen == null) {
-            //console.log('Question ' + (i + 1) + ' NULL    ')
+            isclicked = false;
+            // show the erorr page
+            console.log("showing error");
+            warning_div.style.display = "block";
+            return;
         }
         console.log("Question " + i + " " + answerchosen);
 
@@ -83,8 +88,22 @@ function submit() {
     percent = (Number(totalcorrect) / Number(totalqs)) * 100;
     console.log(percent + " % ");
 
+    let time = new Date();
+    let time_f = time;
+
     let scoretext = document.getElementById("score");
-    scoretext.innerHTML = "Score:  " + percent + "%";
+    scoretext.innerHTML =
+        "At " +
+        time_f +
+        " You got a score of " +
+        percent +
+        "%" +
+        "<br>" +
+        "You had " +
+        totalcorrect +
+        "/" +
+        totalqs +
+        " correct";
 
     //add the score to the db
     write_db();
