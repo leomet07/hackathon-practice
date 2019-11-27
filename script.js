@@ -169,7 +169,9 @@ function calculate_avg(datasnapshot) {
 
     //displaying the avg to the user
     document.getElementById("avg").innerHTML =
-        "The global avg was: " + precise_round(avg, 3);
+        '<span class="badge badge-secondary">The global avg was: ' +
+        precise_round(avg, 3) +
+        "</span>";
 }
 function precise_round(num, dec) {
     if (typeof num !== "number" || typeof dec !== "number") return false;
