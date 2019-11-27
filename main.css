@@ -12,7 +12,9 @@ h5,
 h6 {
     color: #444444;
 }
-
+.checkbox {
+    border: thick double #32a1ce;
+}
 ul {
     margin: 0;
 }
